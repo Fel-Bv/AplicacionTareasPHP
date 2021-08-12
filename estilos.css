@@ -1,0 +1,23 @@
+.ml-auto {
+    /* margin-left: auto; */
+    float: right;
+}
+
+.form-inline {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.mr-sm-2 {
+    margin-right: .5rem;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}

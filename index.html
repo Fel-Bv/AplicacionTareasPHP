@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap.css">
+    <link rel="stylesheet" href="./estilos.css">
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <script>
+        var editando_tarea = false;
+    </script>
+    <script type="module" src="./app.js"></script>
+    <script type="module" src="./eliminar.js"></script>
+    <script type="module" src="./agregar.js"></script>
+    <script type="module" src="./editar.js"></script>
+    <script type="module" src="./listar.js"></script>
+    <script src="./buscar.js"></script>
+
+    <title>Aplicación Tareas</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a href="#" class="navbar-brand">Aplicación de tareas</a>
+
+            <ul class="navbar-nav ml-auto">
+                <form class="form-inline my-2 my-lg-0">
+                    <input type="search" id="busqueda" autocomplete="off" class="form-control mr-sm-2" placeholder="Busca una tarea">
+                    <button class="btn btn-success my-2 my-sm-0" type="submit">
+                        Buscar
+                    </button>
+                </form>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mt-3">
+        <section class="row">
+            <div class="col-md-5">
+                <section class="card">
+                    <div class="card-body">
+                        <form id="formulario-tarea">
+                            <input type="hidden" id="id-tarea">
+                            <div class="form-group my-2">
+                                <input type="text" autocomplete="off" class="form-control" id="nombre" placeholder="Nombre de la tarea">
+                            </div>
+                            <div class="form-group my-2">
+                                <textarea
+                                    cols="30"
+                                    rows="10"
+                                    class="form-control"
+                                    id="descripcion"
+                                    placeholder="Descripción de la tarea"
+                                ></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block text-center">
+                                Guardar tarea
+                            </button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-7">
+                <section class="card my-4" id="resultado-busqueda">
+                    <div class="card-body">
+                        <ul id="resultado-busqueda-contenedor">
+                        </ul>
+                    </div>
+                </section>
+                <table class="table table-bordered table-sm">
+                    <thead>
+                        <tr>
+                            <td>#</td>
+                            <td>Nombre</td>
+                            <td>Descripción</td>
+                            <td>Opciones</td>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tareas">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
